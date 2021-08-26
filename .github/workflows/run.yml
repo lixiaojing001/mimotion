@@ -48,13 +48,3 @@ jobs:
           area='${{ secrets.AREA }}'
           python3 main.py ${user} ${passwd} ${skey} ${sckey} ${position} ${corpid} ${corpsecret} ${agentid} ${touser} ${toparty} ${totag} ${open_get_weather} ${area}
 
-      - name: 重置刷新时间
-        run: |
-          zsh random_cron.sh
-          git_pwd='${{ secrets.GIT_PWD }}'
-          git config --global user.name "lixiaojing001"
-          git config --global user.email "lixiaojing56789@163.com"
-          git add .
-          git commit -m '重置下次刷新时间'
-          git remote set-url origin http://lixiaojing001:${git_pwd}@github.com/lixaojing001/mimotion.git
-          git push
