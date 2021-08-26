@@ -25,7 +25,6 @@ totag = sys.argv[11]  # 指定接收消息的标签，标签ID列表，多个接
 step1 = ""
 
 # 开启根据地区天气情况降低步数（默认关闭）
-open_get_weather = sys.argv[12]
 # 设置获取天气的地区（上面开启后必填）如：area = "宁波"
 
 
@@ -61,8 +60,6 @@ def getBeijinTime():
     type = ""
     hea = {'User-Agent': 'Mozilla/5.0'}
     url = r'http://time1909.beijing-time.org/time.asp'
-    if open_get_weather:
-        getWeather()
     r = requests.get(url=url, headers=hea)
     if r.status_code == 200:
         result = r.text
