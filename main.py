@@ -172,9 +172,9 @@ def login(user, password):
 
 
 # 主函数
-def main(_user,_passwd,min_1, max_1, a):
+def main(_user,_pwd,min_1, max_1, a):
     user = str(_user)
-    password = str(_passwd)
+    password = str(_pwd)
     step = str(step1)
     if user == '' or password == '':
         print("用户名或密码填写有误！")
